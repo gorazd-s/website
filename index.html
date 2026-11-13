@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GORAZD</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D0C0B'/%3E%3Cpath d='M47.6 22.4A19.5 16.5 0 1 0 51 34.5V32.5H35' fill='none' stroke='%23fff' stroke-width='7.5'/%3E%3C/svg%3E">
+<meta name="description" content="Gorazd Stojanov. Luxury retail management and operations. Over seven years in retail, most recently with La Prairie, Penhaligon's and OPSM. Bachelor of Information Technology. Sydney, NSW.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Gorazd Stojanov","jobTitle":"Counter Manager","worksFor":{"@type":"Organization","name":"La Prairie Switzerland / David Jones"},"address":{"@type":"PostalAddress","addressLocality":"Sydney","addressRegion":"NSW","addressCountry":"AU"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Torrens University Australia"},"hasCredential":{"@type":"EducationalOccupationalCredential","name":"Bachelor of Information Technology"},"knowsLanguage":["English","Macedonian","Serbian","Croatian","Bulgarian"],"knowsAbout":["Retail store management","Microsoft Excel","Power BI","Python","Git and GitHub","Retail operations","CRM and client relationship management","Sales performance and KPI delivery","Team leadership, rostering and staff training","Inventory management and stocktakes","POS systems","Commercial and operational reporting","First-line IT troubleshooting","SQL and databases","HTML, CSS and JavaScript","Firebase","UX/UI design","Figma","Adobe Photoshop","Adobe Illustrator","Adobe InDesign","Adobe Premiere Pro"],"sameAs":["https://www.linkedin.com/in/gorazds/"]}
+</script>
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Gorazd Stojanov">
+<meta property="og:description" content="Luxury retail management and operations. Over seven years in retail, most recently with La Prairie, Penhaligon&#39;s and OPSM. Bachelor of Information Technology.">
+<meta name="twitter:card" content="summary">
+<style>
+/* Layout: one variable type family in three widths (expanded for display, normal for text, condensed for labels) on white.
+   Every section sits on the same 5/7 column split under a full-width rule. The wordmark is small and reacts in weight;
+   headings ink in from hairline to bold. Signal orange appears only on interaction. */
+:root{
+  --paper:#FFFFFF;
+  --ink:#0D0C0B;
+  --ink-2:#56524D;
+  --ink-3:#928D86;
+  --ghost:#D8D4CE;
+  --rule:#E7E4DF;
+  --wash:#F4F3F0;
+  --wash-2:#ECEAE6;
+  --signal:#FF4B14;
+
+  --f:"Archivo", "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --max:1280px;
+  --bar:60px;
+  --gap:clamp(24px,4vw,64px);
+  --pad:clamp(56px,7vw,104px);
+  --out:cubic-bezier(.16,.84,.24,1);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--bar) + 16px);-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--f);font-size:17px;line-height:1.55;font-weight:400;font-stretch:100%;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+::selection{background:var(--signal);color:var(--ink)}
+h1,h2,h3,h4,p,ul,dl,dd,dt{margin:0;padding:0}
+ul{list-style:none}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+
+.wrap{
+  max-width:var(--max);margin-inline:auto;
+  padding-left:max(24px, env(safe-area-inset-left, 0px));
+  padding-right:max(24px, env(safe-area-inset-right, 0px));
+}
+.cols{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:var(--gap)}
+.label{
+  font-stretch:78%;font-weight:600;font-size:12.5px;line-height:1.3;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+}
+
+/* ---------- Top bar ---------- */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--paper);border-bottom:1px solid transparent;transition:border-color .4s}
+.bar.on{border-bottom-color:var(--rule)}
+.bar-in{height:var(--bar);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.mark{
+  display:flex;justify-content:space-between;align-items:center;flex:none;
+  font-stretch:125%;font-weight:760;font-size:19px;line-height:1;letter-spacing:0;
+  padding-block:8px;overflow:hidden;
+}
+.mark span{display:block}
+.probe{position:fixed;left:0;top:-9999px;visibility:hidden;white-space:nowrap;pointer-events:none;font-stretch:125%;font-weight:900;font-size:19px;line-height:1}
+.bar-nav{display:flex;align-items:center;gap:clamp(18px,2.4vw,34px)}
+.bar-nav a{font-size:14px;font-weight:450;color:var(--ink-2);transition:color .2s,font-weight .35s}
+.bar-nav a:hover,.bar-nav a.is{color:var(--ink);font-weight:650}
+.bar-nav a.out{color:var(--ink);font-weight:600;display:inline-flex;gap:6px;align-items:baseline}
+.bar-nav a.out i{font-style:normal;display:inline-block;transition:transform .4s var(--out)}
+.bar-nav a.out:hover i{transform:translate(3px,-3px)}
+
+/* ---------- Hero ---------- */
+.hero{padding-block:clamp(8px,1.4vw,20px) var(--pad)}
+.hero-rule{height:1px;background:var(--ink);transform-origin:left}
+.hero .cols{padding-top:clamp(36px,5vw,72px);row-gap:36px}
+/* name lives in the wordmark and the sign-off */
+.who-unused{font-size:19px;font-weight:650;font-stretch:112%;letter-spacing:-.005em;line-height:1.3}
+.facts{margin-top:24px;display:grid;gap:16px}
+.facts dd{font-size:16px;margin-top:3px}
+.lead{
+  font-size:clamp(26px,3.5vw,48px);line-height:1.12;letter-spacing:-.024em;font-weight:480;
+  text-wrap:balance;max-width:21em;
+}
+.lead .w{transition:color 1s var(--out)}
+.js .lead:not(.in) .w{color:var(--ghost)}
+.sum{margin-top:clamp(22px,2.4vw,32px);color:var(--ink-2);font-size:clamp(17px,1.35vw,19px);max-width:36em}
+
+.js .hero-rule{animation:draw 1.3s var(--out) .1s both}
+.js .who,.js .sum{animation:up 1s var(--out) .35s both}
+.js .sum{animation-delay:.9s}
+@keyframes draw{from{transform:scaleX(0)}to{transform:none}}
+@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* ---------- Hero v2 ---------- */
+.hero{padding-block:clamp(36px,5.5vw,80px) var(--pad)}
+.eyebrow{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px;margin-bottom:clamp(26px,3.4vw,46px)}
+.eyebrow p{font-size:15px;color:var(--ink-2)}
+.eyebrow b{color:var(--ink);font-weight:620}
+.headline{
+  font-stretch:106%;font-weight:300;font-size:clamp(38px,5.8vw,86px);line-height:1.02;letter-spacing:-.036em;
+  max-width:18.5ch;text-wrap:balance;
+}
+.headline .w{transition:color 1s var(--out),font-weight 1.4s var(--out)}
+.headline .k{font-weight:720}
+.js .headline:not(.in) .w{color:var(--ghost)}
+.js .headline:not(.in) .k{font-weight:300}
+.hero .hero-rule{margin-top:clamp(40px,5vw,72px)}
+.hero-body{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:var(--gap);row-gap:40px;padding-top:clamp(28px,3vw,40px)}
+.intro p{color:var(--ink-2);font-size:clamp(17px,1.35vw,19px);max-width:30em}
+.ctas{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:30px}
+.go{
+  display:inline-flex;align-items:baseline;gap:8px;font-weight:600;font-size:16px;padding-bottom:5px;
+  background:linear-gradient(var(--ink),var(--ink)) left bottom/100% 1px no-repeat;
+  transition:background-size .5s var(--out);
+}
+.go i{font-style:normal;display:inline-block;transition:transform .4s var(--out)}
+.go:hover{background-size:0 1px;background-position:right bottom}
+.go:hover i.ne{transform:translate(3px,-3px)}
+.go:hover i.s{transform:translateY(3px)}
+.creds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.cred{position:relative;padding:0 20px 24px 0;min-width:0}
+.cred + .cred{padding-left:20px}
+.cred + .cred::after{content:"";position:absolute;left:0;top:0;bottom:24px;width:1px;background:var(--rule)}
+.cred:nth-child(3){padding-right:0}
+.cred .label,.langs-row .label{display:block}
+.cred b{display:block;margin-top:9px;font-stretch:112%;font-weight:650;font-size:clamp(17px,1.45vw,21px);line-height:1.2;letter-spacing:-.014em}
+.cred p{margin-top:6px;font-size:15px;line-height:1.45;color:var(--ink-2)}
+.langs-row{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:22px}
+.langs-row ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 20px;margin-top:12px}
+.langs-row li small{display:block;margin-top:2px;font-size:13px;color:var(--ink-3)}
+.langs-row li b{display:block;font-stretch:100%;font-weight:650;font-size:17px;line-height:1.25;letter-spacing:-.01em}
+.langs-row li span{display:block;margin-top:4px;font-size:14.5px;line-height:1.4;color:var(--ink-2)}
+.js .eyebrow{animation:up .9s var(--out) .05s both}
+.js .hero-body > *{animation:up 1s var(--out) 1s both}
+.js .hero-body > * + *{animation-delay:1.12s}
+
+.now{margin-top:26px;padding-top:18px;border-top:1px solid var(--rule);max-width:30em}
+.now .label{display:block}
+.now b{display:block;margin-top:7px;font-stretch:108%;font-weight:640;font-size:17px;line-height:1.3;letter-spacing:-.005em}
+.now-l{display:block;margin-top:3px;font-size:15px;color:var(--ink-3)}
+.proj .go{margin-top:24px}
+.reach{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px 40px;margin-top:22px}
+.reach .end-link{margin-top:0}
+.mail{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px}
+.mail-a{font-weight:600;font-size:clamp(17px,1.6vw,21px);user-select:all;-webkit-user-select:all}
+.copy{
+  font:600 12.5px var(--f);font-stretch:78%;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-2);background:none;border:1px solid var(--ghost);border-radius:999px;padding:6px 12px;cursor:pointer;
+  transition:border-color .2s,color .2s,background .2s;
+}
+.copy:hover{border-color:var(--ink);color:var(--ink)}
+.copy.done{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.copy:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+/* ---------- Skills v2 ---------- */
+.skills-wrap{display:grid;gap:clamp(56px,6vw,88px)}
+.sub-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:10px 24px;margin-bottom:18px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{
+  background:var(--wash);border-radius:18px;padding:24px 24px 26px;display:flex;flex-direction:column;
+  transition:background .35s,opacity .9s var(--out),transform .9s var(--out);
+}
+.card:hover{background:var(--wash-2)}
+.card svg{width:30px;height:30px;stroke:var(--ink);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.card h4{margin-top:22px;font-stretch:114%;font-weight:670;font-size:19px;line-height:1.2;letter-spacing:-.012em}
+.card .d{margin-top:6px;font-size:15px;line-height:1.45;color:var(--ink-2)}
+.card ul{margin-top:18px;padding-top:16px;border-top:1px solid var(--wash-2);display:grid;gap:8px}
+.card:hover ul{border-top-color:var(--ghost)}
+.card li{position:relative;padding-left:18px;font-size:15.5px;line-height:1.4}
+.card li::before{content:"";position:absolute;left:1px;top:.5em;width:6px;height:6px;background:var(--ink);border-radius:1px}
+.cards.pre .card{opacity:0;transform:translateY(16px)}
+.cards .card:nth-child(2){transition-delay:0s,.07s,.07s}
+.cards .card:nth-child(3){transition-delay:0s,.14s,.14s}
+.cards .card:nth-child(4){transition-delay:0s,.21s,.21s}
+
+.key{display:flex;align-items:center;gap:14px;font-size:13.5px;color:var(--ink-2)}
+.key span{display:inline-flex;align-items:center;gap:7px}
+.key i{display:block;width:22px;height:12px;border-radius:999px;border:1px solid var(--ink-3)}
+.key i.f{background:var(--ink);border-color:var(--ink)}
+.tgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tcard{border:1px solid var(--rule);border-radius:18px;padding:22px 22px 24px;min-width:0}
+.tcard.wide{grid-column:1/-1;background:var(--wash);border-color:var(--wash)}
+.tcard-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 16px}
+.tcard h4{font-stretch:114%;font-weight:670;font-size:17px;line-height:1.25;letter-spacing:-.01em}
+.tcard-h p{font-size:13.5px;color:var(--ink-3)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{
+  font-size:14.5px;line-height:1.2;padding:7px 13px;border-radius:999px;border:1px solid var(--ghost);color:var(--ink);
+  transition:opacity .6s var(--out) calc(var(--i,0) * 35ms),transform .6s var(--out) calc(var(--i,0) * 35ms),border-color .2s;
+}
+.chip:hover{border-color:var(--ink)}
+.chip.p{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.tcard.wide .chip{background:var(--paper);border-color:var(--paper)}
+.tgrid.pre .chip{opacity:0;transform:translateY(6px)}
+
+/* ---------- Sections ---------- */
+.sec{position:relative;padding-block:var(--pad)}
+.sec > .wrap{position:relative}
+.sec > .wrap::before{
+  content:"";position:absolute;top:calc(-1 * var(--pad));height:1px;background:var(--ink);
+  left:max(24px, env(safe-area-inset-left, 0px));right:max(24px, env(safe-area-inset-right, 0px));
+  transform-origin:left;transition:transform 1.4s var(--out);
+}
+.sec h2{
+  font-stretch:125%;font-weight:680;font-size:clamp(24px,2.5vw,36px);line-height:1.08;letter-spacing:-.018em;
+  transition:font-weight 1.1s var(--out),color 1.1s var(--out);
+}
+.sec.pre > .wrap::before{transform:scaleX(0)}
+.sec.pre h2{font-weight:160;color:var(--ink-3)}
+.sec .cols{row-gap:28px}
+.fade{transition:opacity .9s var(--out),transform .9s var(--out)}
+.fade.pre{opacity:0;transform:translateY(16px)}
+
+/* ---------- Skills ---------- */
+.sk{display:grid}
+.sk-row{
+  display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);column-gap:28px;row-gap:6px;
+  padding-block:20px;border-bottom:1px solid var(--rule);
+  transition:opacity .35s,transform .9s var(--out);
+}
+.sk-row:first-child{padding-top:2px}
+.sk-row h3{font-stretch:112%;font-weight:660;font-size:16.5px;line-height:1.45;letter-spacing:-.005em;transition:font-weight .45s var(--out)}
+.sk-row ul{font-size:17.5px;line-height:1.6;font-weight:450}
+.sk-row li{display:inline}
+.sk-row li:not(:last-child)::after{content:"/";color:var(--ghost);margin-inline:.55em;font-weight:400}
+.sk-row li span{white-space:nowrap}
+.sk-row em{font-style:normal;font-weight:400;color:var(--ink-3)}
+.sk.pre .sk-row{opacity:0;transform:translateY(14px)}
+.sk .sk-row:nth-child(2){transition-delay:0s,.06s}
+.sk .sk-row:nth-child(3){transition-delay:0s,.12s}
+.sk .sk-row:nth-child(4){transition-delay:0s,.18s}
+.sk .sk-row:nth-child(5){transition-delay:0s,.24s}
+.sk .sk-row:nth-child(6){transition-delay:0s,.3s}
+.sk.pre .sk-row{transition-delay:0s}
+@media (hover:hover){
+  .sk:hover .sk-row{opacity:.38}
+  .sk:hover .sk-row:hover{opacity:1}
+  .sk-row:hover h3{font-weight:860}
+}
+
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.sub{margin-bottom:20px}
+.areas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px var(--gap);margin-bottom:clamp(56px,6vw,88px)}
+.area{border-top:1px solid var(--ink);padding-top:16px;transition:opacity .9s var(--out),transform .9s var(--out)}
+.area h4{font-stretch:112%;font-weight:660;font-size:17px;line-height:1.3;letter-spacing:-.005em}
+.area ul{margin-top:14px;display:grid;gap:7px}
+.area li{color:var(--ink-2);font-size:16px;line-height:1.45}
+.areas.pre .area{opacity:0;transform:translateY(14px)}
+.areas .area:nth-child(2){transition-delay:.07s}
+.areas .area:nth-child(3){transition-delay:.14s}
+.areas .area:nth-child(4){transition-delay:.21s}
+.tools-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px}
+.legend{display:flex;gap:18px;font-size:14px}
+.legend b{font-weight:660}
+.legend span{font-weight:380;color:var(--ink-2)}
+.sk-row li span{font-weight:380;color:var(--ink-2);transition:font-weight 1.3s var(--out)}
+.sk-row li.p span{font-weight:660;color:var(--ink)}
+.sk.pre .sk-row li span{font-weight:100}
+.sk .sk-row li:nth-child(n+3) span{transition-delay:.12s}
+.sk .sk-row li:nth-child(n+6) span{transition-delay:.24s}
+
+/* ---------- Experience ---------- */
+.dial{position:sticky;top:calc(var(--bar) + env(safe-area-inset-top,0px) + 9vh);margin-top:clamp(28px,4vw,56px)}
+.year{
+  display:flex;font-stretch:125%;font-weight:800;font-size:clamp(84px,10.4vw,152px);line-height:1;letter-spacing:-.035em;
+  margin-left:-.04em;height:.8em;overflow:hidden;
+}
+.year .d{display:block;height:1em;margin-top:-.1em;overflow:hidden}
+.year .d > span{display:block;transition:transform 1s var(--out)}
+.year .d:nth-child(2) > span{transition-delay:40ms}
+.year .d:nth-child(3) > span{transition-delay:80ms}
+.year .d:nth-child(4) > span{transition-delay:120ms}
+.year .d b{display:block;height:1em;font-weight:inherit}
+
+.job{padding-block:clamp(36px,4vw,52px);border-top:1px solid var(--rule)}
+.job:first-child{padding-top:0;border-top:0}
+.job:last-child{padding-bottom:0}
+.job h3,.entry h3{font-stretch:125%;font-weight:680;font-size:clamp(22px,2.15vw,30px);line-height:1.12;letter-spacing:-.018em}
+.pos{margin-top:16px}
+.pos + .pos{margin-top:34px;padding-top:30px;border-top:1px dashed var(--rule)}
+.pos-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 24px}
+.pos-h h4{font-size:18px;font-weight:620;letter-spacing:-.005em}
+.pos-h time{font-stretch:78%;font-weight:600;font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink);font-variant-numeric:tabular-nums}
+.loc{font-size:15px;color:var(--ink-3);margin-top:2px}
+.pts{margin-top:18px;display:grid;gap:11px;max-width:40em}
+.pts li{position:relative;padding-left:22px;color:var(--ink-2)}
+.pts li::before{content:"";position:absolute;left:0;top:.74em;width:10px;height:1px;background:var(--ink-3)}
+.pts strong{color:var(--ink);font-weight:620}
+
+/* ---------- Education, leadership ---------- */
+.entry-meta{margin-top:18px}
+.entry-meta p{font-size:16px}
+.entry-meta time{display:block;margin-top:14px;font-stretch:78%;font-weight:600;font-size:13px;letter-spacing:.09em;text-transform:uppercase;font-variant-numeric:tabular-nums}
+.entry-r{margin-top:24px}
+.entry-r p{color:var(--ink-2);max-width:40em}
+.proj{margin-top:32px;padding-top:26px;border-top:1px solid var(--rule)}
+.proj p{margin-top:12px}
+.tools{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:20px}
+.tools li{font-weight:620;font-size:15.5px}
+
+/* ---------- Footer ---------- */
+.end{padding-block:var(--pad) 0}
+.sign{font-stretch:125%;font-weight:700;font-size:clamp(30px,4.7vw,62px);line-height:1.05;letter-spacing:-.025em;transition:font-weight 1.1s var(--out),color 1.1s var(--out)}
+.end.pre .sign{font-weight:160;color:var(--ink-3)}
+.end-link{
+  display:inline-flex;align-items:baseline;gap:8px;margin-top:22px;
+  font-weight:600;font-size:clamp(17px,1.6vw,21px);padding-bottom:5px;
+  background:linear-gradient(var(--ink),var(--ink)) left bottom/100% 1px no-repeat;
+  transition:background-size .5s var(--out);
+}
+.end-link i{font-style:normal;display:inline-block;transition:transform .4s var(--out),color .3s}
+.end-link:hover{background-size:0 1px;background-position:right bottom}
+.end-link:hover i{transform:translate(3px,-3px);color:var(--signal)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;margin-top:var(--pad);padding-block:22px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--ink-3)}
+.foot a:hover{color:var(--ink)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .cols,.hero-body{grid-template-columns:minmax(0,1fr)}
+  .bar-nav a:not(.out){display:none}
+  .sk-row{grid-template-columns:minmax(0,1fr)}
+  /* the year dial becomes a slim strip that rides under the top bar */
+  .exp .cols > div:first-child{display:contents}
+  .exp h2{margin-bottom:8px}
+  .dial{
+    top:calc(var(--bar) + env(safe-area-inset-top,0px));z-index:5;margin:0 0 28px;
+    background:var(--paper);padding-block:10px;border-bottom:1px solid var(--rule);
+  }
+  .year{font-size:30px;letter-spacing:-.02em}
+  .entry-meta{margin-top:12px}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .wrap{padding-left:max(18px, env(safe-area-inset-left, 0px));padding-right:max(18px, env(safe-area-inset-right, 0px))}
+  .sec > .wrap::before{left:max(18px, env(safe-area-inset-left, 0px));right:max(18px, env(safe-area-inset-right, 0px))}
+  .sk-row ul{font-size:16.5px}
+  .cards,.tgrid{grid-template-columns:minmax(0,1fr)}
+  .creds{grid-template-columns:minmax(0,1fr)}
+  .cred,.cred + .cred{padding:18px 0}
+  .cred + .cred::after{display:none}
+  .cred:nth-child(1){padding-top:0}
+  .cred + .cred{border-top:1px solid var(--rule)}
+  .langs-row{padding-top:18px}
+  .langs-row ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+<style>html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<header class="bar" id="bar">
+  <div class="wrap bar-in">
+    <a class="mark" id="mark" href="#top" aria-label="Gorazd Stojanov, back to top"><span aria-hidden="true">G</span><span aria-hidden="true">O</span><span aria-hidden="true">R</span><span aria-hidden="true">A</span><span aria-hidden="true">Z</span><span aria-hidden="true">D</span></a>
+    <nav class="bar-nav" aria-label="Sections">
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a class="out" href="https://www.linkedin.com/in/gorazds/" target="_blank" rel="noopener">LinkedIn <i>↗</i></a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <h1 class="sr-only">Gorazd Stojanov</h1>
+
+  <section class="hero" id="hero">
+    <div class="wrap">
+      <p class="headline" id="headline"><span class="k">Luxury retail management and operations,</span> backed by a <span class="k">degree in IT.</span></p>
+      <div class="hero-rule" aria-hidden="true"></div>
+      <div class="hero-body">
+        <div class="intro">
+          <p>Over seven years in retail, most recently with La Prairie, Penhaligon's and OPSM. Experienced in store operations, team leadership, CRM and client management, sales performance, reporting and first-line IT support.</p>
+          <div class="now">
+            <span class="label">Currently</span>
+            <b>Counter Manager, La Prairie Switzerland / David Jones</b>
+            <span class="now-l">Bondi Junction, Sydney</span>
+          </div>
+          <div class="ctas">
+            <a class="go" href="#experience">Experience <i class="s">↓</i></a>
+            <a class="go" href="#contact">Contact <i class="s">↓</i></a>
+            <a class="go" href="https://www.linkedin.com/in/gorazds/" target="_blank" rel="noopener">LinkedIn <i class="ne">↗</i></a>
+          </div>
+        </div>
+        <div class="creds">
+          <div class="cred"><span class="label">Australia</span><b>Full working rights</b><p>No visa sponsorship required</p></div>
+          <div class="cred"><span class="label">European Union</span><b>EU citizen</b><p>Permanent right to live and work in any EU country</p></div>
+          <div class="cred"><span class="label">Location</span><b>Sydney, NSW</b><p>Open to relocation within Australia and Europe</p></div>
+          <div class="langs-row">
+            <span class="label">Languages</span>
+            <ul>
+              <li><b>English</b><span>Fluent</span><small>IELTS Academic 8.5</small></li>
+              <li><b>Macedonian</b><span>Native</span></li>
+              <li><b>Serbian/Croatian</b><span>Professional proficiency</span></li>
+              <li><b>Bulgarian</b><span>Conversational</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="skills" data-r>
+    <div class="wrap cols">
+      <div><h2>Skills</h2></div>
+      <div class="skills-wrap">
+        <div>
+          <div class="sub-h"><h3 class="label">Expertise</h3></div>
+          <div class="cards" data-r>
+            <article class="card">
+              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 12l2.5-6h19L28 12"/><path d="M4 12h24v1.5a3.5 3.5 0 0 1-6 2.4 3.5 3.5 0 0 1-6 0 3.5 3.5 0 0 1-6 0 3.5 3.5 0 0 1-6-2.4z"/><path d="M6 17v10h20V17"/><path d="M13 27v-6h6v6"/></svg>
+              <h4>Store management</h4>
+              <ul>
+                <li>Daily store operations</li>
+                <li>Team leadership and staff development</li>
+                <li>Rostering and scheduling</li>
+                <li>Onboarding and staff training</li>
+                <li>Sales, KPI, UPT and conversion targets</li>
+              </ul>
+            </article>
+            <article class="card">
+              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4l11 5.5v13L16 28 5 22.5v-13z"/><path d="M5 9.5L16 15l11-5.5"/><path d="M16 15v13"/><path d="M10.5 6.8l11 5.5"/></svg>
+              <h4>Retail operations</h4>
+              <ul>
+                <li>Inventory management and stocktakes</li>
+                <li>POS systems</li>
+                <li>Operational reporting</li>
+                <li>Process management</li>
+                <li>Events and product launches</li>
+              </ul>
+            </article>
+            <article class="card">
+              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27h24"/><path d="M6 21l6-6 5 4 9-10"/><path d="M20 9h6v6"/></svg>
+              <h4>Commercial &amp; client</h4>
+              <ul>
+                <li>Commercial and sales reporting</li>
+                <li>CRM and client portfolio management</li>
+                <li>Targeted campaigns and client retention</li>
+                <li>Stakeholder and cross-functional coordination</li>
+              </ul>
+            </article>
+            <article class="card">
+              <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="6" width="24" height="16" rx="2"/><path d="M12 27h8"/><path d="M16 22v5"/><path d="M13 12.5l-2.5 2.5 2.5 2.5"/><path d="M19 12.5l2.5 2.5-2.5 2.5"/></svg>
+              <h4>IT support</h4>
+              <ul>
+                <li>First-line IT troubleshooting</li>
+                <li>POS and hardware issues</li>
+                <li>Working with the ServiceDesk and IT team</li>
+                <li>Coordinating external IT providers</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+
+        <div>
+          <div class="sub-h">
+            <h3 class="label">Tools &amp; technology</h3>
+            <p class="key"><span><i class="f"></i>Proficient</span><span><i></i>Working knowledge</span></p>
+          </div>
+          <div class="tgrid" data-r>
+            <div class="tcard">
+              <div class="tcard-h"><h4>Retail systems</h4></div>
+              <ul class="chips">
+                <li class="chip p">POS systems</li>
+                <li class="chip p">CRM and clienteling</li>
+                <li class="chip p">Inventory and stocktakes</li>
+                <li class="chip">IT ServiceDesk escalation</li>
+              </ul>
+            </div>
+            <div class="tcard">
+              <div class="tcard-h"><h4>Data &amp; reporting</h4></div>
+              <ul class="chips">
+                <li class="chip p">Sales and KPI reporting</li>
+                <li class="chip">Microsoft Excel</li>
+                <li class="chip">Power BI</li>
+                <li class="chip">SQL</li>
+              </ul>
+            </div>
+            <div class="tcard">
+              <div class="tcard-h"><h4>Web development</h4></div>
+              <ul class="chips">
+                <li class="chip p">HTML</li>
+                <li class="chip p">CSS</li>
+                <li class="chip p">JavaScript</li>
+                <li class="chip p">Python</li>
+                <li class="chip">Firebase</li>
+                <li class="chip">Git and GitHub</li>
+                <li class="chip">Vercel</li>
+                <li class="chip">Domains and DNS</li>
+              </ul>
+            </div>
+            <div class="tcard">
+              <div class="tcard-h"><h4>Design &amp; media</h4></div>
+              <ul class="chips">
+                <li class="chip p">UX/UI design</li>
+                <li class="chip p">Figma</li>
+                <li class="chip p">Photoshop</li>
+                <li class="chip p">Illustrator</li>
+                <li class="chip p">InDesign</li>
+                <li class="chip p">Print design</li>
+                <li class="chip">Premiere Pro</li>
+                <li class="chip">CapCut</li>
+              </ul>
+            </div>
+            <div class="tcard wide">
+              <div class="tcard-h"><h4>IT foundations</h4><p>Bachelor of Information Technology</p></div>
+              <ul class="chips">
+                <li class="chip">Software development</li>
+                <li class="chip">Databases</li>
+                <li class="chip">Networking</li>
+                <li class="chip">Cloud computing</li>
+                <li class="chip">Web development</li>
+                <li class="chip">Application development</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec exp" id="experience" data-r>
+    <div class="wrap cols">
+      <div>
+        <h2>Experience</h2>
+        <div class="dial" id="dial" aria-hidden="true">
+          <div class="year" id="year"></div>
+        </div>
+      </div>
+      <div>
+        <article class="job" id="la-prairie">
+          <h3>La Prairie Switzerland / David Jones</h3>
+          <div class="pos stop" data-y="2026">
+            <div class="pos-h"><h4>Counter Manager</h4><time>Aug 2026 to Present</time></div>
+            <p class="loc">Bondi Junction, Sydney, NSW</p>
+            <ul class="pts">
+              <li>Since starting, the counter has moved from <strong>#2 to #1 skincare brand</strong> at David Jones Bondi Junction, and to <strong>#2 across all Beauty &amp; Fragrance</strong> brands.</li>
+              <li>Lead counter operations and a team of two beauty therapists, along with commercial reporting and coordination between La Prairie and David Jones.</li>
+              <li>Responsible for CRM and client portfolio management, including targeted campaigns, personalised outreach, client retention, appointment management and inventory coordination.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job" id="opsm">
+          <h3>OPSM (EssilorLuxottica)</h3>
+          <div class="pos stop" data-y="2026">
+            <div class="pos-h"><h4>Assistant Store Manager</h4><time>May 2026 to Aug 2026</time></div>
+            <p class="loc">Chatswood, Sydney, NSW</p>
+            <ul class="pts">
+              <li>Supported the store manager with daily operations in a high-volume store, including rostering, inventory, stocktakes, team coordination and KPI delivery.</li>
+              <li>Main in-store contact for IT and technical issues, providing first-line troubleshooting and working directly with the ServiceDesk and IT team.</li>
+              <li>Delivered personalised customer consultations while supporting reporting and operational processes.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job" id="penhaligons">
+          <h3>Penhaligon's (Puig)</h3>
+          <div class="pos stop" data-y="2023">
+            <div class="pos-h"><h4>Fragrance Consultant (Keyholder)</h4><time>Oct 2023 to May 2026</time></div>
+            <p class="loc">Queen Victoria Building, Sydney, NSW</p>
+            <ul class="pts">
+              <li>Generated <strong>$450K+ in personal sales</strong> over two years in a luxury flagship store, above sales targets and KPIs.</li>
+              <li>Oversaw daily store operations as a keyholder, keeping the store running consistently through changes in management and staff, and helping with rostering, onboarding, staff training and team performance.</li>
+              <li>Drove CRM and high-value client relationships, along with product launches.</li>
+              <li>Supported multiple masterclass events.</li>
+              <li>Managed inventory, stocktakes, POS systems and minor technical troubleshooting.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job" id="kala">
+          <h3>Kala Perfumery</h3>
+          <div class="pos stop" data-y="2020">
+            <div class="pos-h"><h4>Assistant Store Manager</h4><time>Jan 2020 to Nov 2022</time></div>
+            <p class="loc">Bitola, North Macedonia</p>
+            <ul class="pts">
+              <li>Oversaw daily store operations as 2IC, leading staff, scheduling and sales performance.</li>
+              <li>Managed POS, inventory, CRM and operational reporting.</li>
+              <li>Led in-store IT support, troubleshooting POS and hardware issues and coordinating external IT support.</li>
+            </ul>
+          </div>
+          <div class="pos stop" data-y="2018">
+            <div class="pos-h"><h4>Retail Associate</h4><time>Jul 2018 to Jan 2020</time></div>
+            <p class="loc">Bitola, North Macedonia</p>
+            <ul class="pts">
+              <li>Exceeded sales, KPI, UPT and conversion targets in a high-traffic cosmetics store.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="education" data-r>
+    <div class="wrap cols">
+      <div><h2>Education</h2></div>
+      <div class="entry fade" data-r>
+        <h3>Bachelor of Information Technology</h3>
+        <div class="entry-meta">
+          <p>Torrens University Australia</p>
+          <p class="loc">Sydney, NSW</p>
+          <time>Jun 2023 to May 2026</time>
+        </div>
+        <div class="entry-r">
+          <p>Developed foundations in software development, databases, networking and cloud computing, with practical experience in web development, UX/UI design and application development.</p>
+          <div class="proj">
+            <h4 class="label">Final-year industry project</h4>
+            <p>Co-developed a web-based employee management system as part of a three-person team, taking primary responsibility for Figma prototyping and frontend development, while contributing to backend functionality.</p>
+            <ul class="tools" aria-label="Tools used"><li>Figma</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Firebase</li></ul>
+            <a class="go" href="https://github.com/mizanurio/ems-industry-project" target="_blank" rel="noopener">View the project on GitHub <i class="ne">↗</i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="leadership" data-r>
+    <div class="wrap cols">
+      <div><h2>Leadership &amp; volunteer experience</h2></div>
+      <div class="entry fade" data-r>
+        <h3>Erasmus+</h3>
+        <div class="pos">
+          <div class="pos-h"><h4>NGO Project Team Leader</h4><time>2019 to 2022</time></div>
+          <p class="loc">Norway, Hungary &amp; Romania</p>
+          <ul class="pts">
+            <li>Led teams of 8 to 10 people in three international Erasmus+ projects across Europe, each spanning several weeks or months.</li>
+            <li>Coordinated tasks, schedules, logistics and documentation for multicultural teams.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec end" id="contact" data-r>
+    <div class="wrap">
+      <p class="sign">Gorazd Stojanov</p>
+      <div class="reach">
+        <a class="end-link" href="https://www.linkedin.com/in/gorazds/" target="_blank" rel="noopener">linkedin.com/in/gorazds <i>↗</i></a>
+        <div class="mail">
+          <span class="mail-a" id="mail" data-u="gorazd.stoj" data-d="gmail.com">gorazd.stoj [at] gmail.com</span>
+          <button type="button" class="copy" id="copyMail">Copy email</button>
+        </div>
+      </div>
+      <div class="foot">
+        <span>© <span id="yr">2026</span></span>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+(function(){
+  var root=document.documentElement; root.classList.add('js');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $=function(s,c){return (c||document).querySelector(s)}, $$=function(s,c){return [].slice.call((c||document).querySelectorAll(s))};
+  $('#yr').textContent=new Date().getFullYear();
+
+  /* ---------- lead: words ink in ---------- */
+  var lead=$('#headline'), wi=0;
+  function wrapWords(node,key){
+    [].slice.call(node.childNodes).forEach(function(n){
+      if(n.nodeType===3){
+        var frag=document.createDocumentFragment();
+        n.textContent.split(/( +)/).forEach(function(part){
+          if(!part) return;
+          if(/^ +$/.test(part)){frag.appendChild(document.createTextNode(' '));return}
+          var sp=document.createElement('span'); sp.className='w'+(key?' k':''); sp.textContent=part;
+          sp.style.transitionDelay=(wi*55)+'ms,'+(wi*55+200)+'ms'; wi++; frag.appendChild(sp);
+        });
+        n.parentNode.replaceChild(frag,n);
+      } else if(n.nodeType===1){ n.classList.remove('k'); wrapWords(n,true) }
+    });
+  }
+  wrapWords(lead,false);
+  $$('.tcard').forEach(function(c){ $$('.chip',c).forEach(function(ch,i){ch.style.setProperty('--i',i)}) });
+
+  /* ---------- year dial ---------- */
+  var yearEl=$('#year'), strips=[];
+  for(var c=0;c<4;c++){
+    var col=document.createElement('span'); col.className='d';
+    var strip=document.createElement('span');
+    for(var n=0;n<10;n++){var b=document.createElement('b'); b.textContent=n; strip.appendChild(b)}
+    col.appendChild(strip); yearEl.appendChild(col); strips.push(strip);
+  }
+  var stops=$$('.stop'), active=-1;
+  function setStop(i){
+    if(i===active) return; active=i;
+    var yr=stops[i].getAttribute('data-y');
+    strips.forEach(function(s,k){s.style.transform='translateY(-'+(+yr[k])+'em)'});
+  }
+  function pickStop(){
+    var line=window.innerHeight*.42, idx=0;
+    for(var i=0;i<stops.length;i++){ if(stops[i].getBoundingClientRect().top<=line) idx=i }
+    setStop(idx);
+  }
+
+  /* ---------- top bar ---------- */
+  var bar=$('#bar');
+  var links=$$('.bar-nav a:not(.out)'), secs=links.map(function(a){return $(a.getAttribute('href'))});
+  function onScroll(){
+    bar.classList.toggle('on', window.scrollY>12);
+    pickStop();
+    var cur=-1; secs.forEach(function(s,i){ if(s.getBoundingClientRect().top<window.innerHeight*.4) cur=i });
+    links.forEach(function(a,i){a.classList.toggle('is',i===cur)});
+  }
+
+  /* ---------- wordmark: letters change weight and width ---------- */
+  var mark=$('#mark'), REST=760, raf=0, wave=-1;
+  var st=$$('span',mark).map(function(el){return {el:el,w:REST,d:125,tw:REST,td:125,delay:0}});
+  var probe=document.createElement('div'); probe.className='probe'; probe.textContent='GORAZD'; probe.setAttribute('aria-hidden','true');
+  document.body.appendChild(probe);
+  function fit(){ var w=probe.getBoundingClientRect().width; if(w>0) mark.style.width=Math.ceil(w*1.04)+'px' }
+  function paint(s){ s.el.style.fontVariationSettings='"wght" '+s.w.toFixed(1)+', "wdth" '+s.d.toFixed(1) }
+  var t0=0;
+  function frame(t){
+    if(!t0) t0=t; var busy=false, el=t-t0;
+    if(wave>=0){
+      var wt=t-wave; if(wt>5*95+760) wave=-1; else busy=true;
+      st.forEach(function(s,i){
+        var x=(wt-i*95)/380-1, k=wave<0?0:Math.max(0,1-x*x);
+        s.tw=REST-600*k; s.td=125-40*k;
+      });
+    }
+    st.forEach(function(s){
+      if(el<s.delay){busy=true;return}
+      s.w+=(s.tw-s.w)*.16; s.d+=(s.td-s.d)*.14;
+      if(Math.abs(s.tw-s.w)>.4||Math.abs(s.td-s.d)>.1) busy=true; else {s.w=s.tw;s.d=s.td}
+      paint(s);
+    });
+    raf=busy?requestAnimationFrame(frame):0;
+  }
+  function kick(){ if(!raf) raf=requestAnimationFrame(frame) }
+  function ripple(){ if(reduce||wave>=0) return; wave=performance.now(); kick() }
+  mark.addEventListener('pointerenter',ripple);
+  mark.addEventListener('focus',ripple);
+
+  var started=false;
+  function go(){
+    if(started) return; started=true;
+    fit(); lead.classList.add('in'); onScroll();
+    if(reduce) return;
+    st.forEach(function(s,i){ s.w=120; s.d=62; s.delay=150+i*80; paint(s) });
+    kick();
+  }
+  if(document.fonts&&document.fonts.load){
+    Promise.all([document.fonts.load('900 19px Archivo'),document.fonts.load('400 19px Archivo')]).then(function(){return document.fonts.ready}).then(go,go);
+    setTimeout(go,1800);
+    document.fonts.ready.then(function(){setTimeout(fit,60)});
+  } else go();
+  window.addEventListener('load',function(){fit();onScroll()});
+  var rz; window.addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(onScroll,120)});
+  window.addEventListener('scroll',onScroll,{passive:true});
+  setStop(0);
+
+  /* ---------- email: assembled on load, copy button ---------- */
+  var m=$('#mail'), cb=$('#copyMail');
+  if(m){
+    var addr=m.getAttribute('data-u')+'@'+m.getAttribute('data-d'); m.textContent=addr;
+    cb.addEventListener('click',function(){
+      function ok(){cb.textContent='Copied';cb.classList.add('done');setTimeout(function(){cb.textContent='Copy email';cb.classList.remove('done')},1800)}
+      function sel(){var r=document.createRange();r.selectNodeContents(m);var s2=window.getSelection();s2.removeAllRanges();s2.addRange(r);cb.textContent='Selected';setTimeout(function(){cb.textContent='Copy email'},1800)}
+      try{ navigator.clipboard.writeText(addr).then(ok,sel) }catch(e){ sel() }
+    });
+  }
+
+  /* ---------- reveals: only what starts below the fold ---------- */
+  if(reduce||!('IntersectionObserver' in window)) return;
+  var vh=window.innerHeight;
+  var items=$$('[data-r]').filter(function(el){return el.getBoundingClientRect().top>vh*.92});
+  items.forEach(function(el){el.classList.add('pre')});
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.remove('pre'); io.unobserve(en.target) } });
+  },{rootMargin:'0px 0px -10% 0px'});
+  items.forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
